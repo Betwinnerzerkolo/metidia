@@ -606,21 +606,21 @@ HREFLANG_BLOCK = """    <link rel="alternate" hreflang="fr" href="https://betsco
     <link rel="alternate" hreflang="x-default" href="https://vulkanbet.us.com/">"""
 
 # ── Build a game card HTML ──
-def game_card_html(img_prefix, slug, name, provider, category, cat_class, desc):
+def game_card_html(img_prefix, go_href, slug, name, provider, category, cat_class, desc, alt_text):
     img_file = slug + ".webp"
     # Fix special case for 100-golden-coins -> 100-golden-coins-reel-fishing.webp
     if slug == "100-golden-coins-reel-fishing":
         img_file = "100-golden-coins-reel-fishing.webp"
     cat_cls = f' class="game-card-category{cat_class}"' if cat_class else ' class="game-card-category"'
-    return f"""                <div class="game-card">
-                    <div class="game-card-img"><img src="{img_prefix}images/{img_file}" alt="{name}" width="400" height="300" loading="lazy"></div>
+    return f"""                <a href="{go_href}" class="game-card-link"><div class="game-card">
+                    <div class="game-card-img"><img src="{img_prefix}images/{img_file}" alt="{alt_text}" width="400" height="300" loading="lazy"></div>
                     <div class="game-card-body">
                         <div class="game-card-name">{name}</div>
                         <div class="game-card-provider">{provider}</div>
                         <span{cat_cls}>{category}</span>
                         <div class="game-card-desc">{desc}</div>
                     </div>
-                </div>"""
+                </div></a>"""
 
 # ── Build a metidia link card ──
 def link_card_html(url, title, desc):
@@ -629,11 +629,39 @@ def link_card_html(url, title, desc):
                     <p>{desc}</p>
                 </div>"""
 
+# ── Alt text templates per language ──
+# Format: "Play {game} - {provider} {category} at BetScore Casino" in each language
+ALT_TEMPLATES = {
+    "fr": "Jouer a {name} - {provider} {category} sur BetScore Casino",
+    "pl": "Graj w {name} - {provider} {category} w BetScore Casino",
+    "de": "Spielen Sie {name} - {provider} {category} bei BetScore Casino",
+    "es": "Jugar {name} - {provider} {category} en BetScore Casino",
+    "en": "Play {name} - {provider} {category} at BetScore Casino",
+    "pt": "Jogar {name} - {provider} {category} no BetScore Casino",
+}
+
 # ── Build full page ──
 def build_page(lang_key):
     cfg = CFG[lang_key]
     is_root = (cfg["output"] == "index.html")
     img_prefix = cfg["img_prefix"]  # "" for root, "../" for subpages
+    
+    # go/ redirect link - relative path
+    go_href = "go/" if is_root else "../go/"
+    
+    # Alt text template for this language
+    alt_tmpl = ALT_TEMPLATES[lang_key]
+    
+    # Banner alt text per language
+    BANNER_ALTS = {
+        "fr": "BetScore Casino - Machines a Sous, Casino en Direct, Jeux de Table en Ligne",
+        "pl": "BetScore Casino - Automaty, Kasyno na Zywo, Gry Stolowe Online",
+        "de": "BetScore Casino - Spielautomaten, Live Casino, Tischspiele Online",
+        "es": "BetScore Casino - Tragamonedas, Casino en Vivo, Juegos de Mesa en Linea",
+        "en": "BetScore Casino - Slots, Live Casino, Table Games Online",
+        "pt": "BetScore Casino - Slots, Casino ao Vivo, Jogos de Mesa Online",
+    }
+    banner_alt = BANNER_ALTS[lang_key]
     
     # Get game descriptions for this language
     if lang_key == "fr":
@@ -644,10 +672,11 @@ def build_page(lang_key):
     # Build base 29 game cards
     game_cards = []
     for i in range(29):
+        alt = alt_tmpl.format(name=BASE_GAME_NAMES[i], provider=BASE_GAME_PROVIDERS[i], category=BASE_GAME_CATEGORIES[i])
         game_cards.append(game_card_html(
-            img_prefix, BASE_GAME_SLUGS[i], BASE_GAME_NAMES[i],
+            img_prefix, go_href, BASE_GAME_SLUGS[i], BASE_GAME_NAMES[i],
             BASE_GAME_PROVIDERS[i], BASE_GAME_CATEGORIES[i],
-            BASE_GAME_CAT_CLASSES[i], game_descs[i]
+            BASE_GAME_CAT_CLASSES[i], game_descs[i], alt
         ))
     
     # Add extra games for this language
@@ -658,9 +687,10 @@ def build_page(lang_key):
             continue
         desc = EXTRA_DESCS.get(lang_key, {}).get(eslug, "")
         img_file = meta["img"]
+        alt = alt_tmpl.format(name=meta["name"], provider=meta["provider"], category=meta["category"])
         game_cards.append(game_card_html(
-            img_prefix, img_file.replace(".webp",""), meta["name"],
-            meta["provider"], meta["category"], meta["cat_class"], desc
+            img_prefix, go_href, img_file.replace(".webp",""), meta["name"],
+            meta["provider"], meta["category"], meta["cat_class"], desc, alt
         ))
     
     games_html = "\n\n".join(game_cards)
@@ -779,6 +809,23 @@ def build_page(lang_key):
     css_match = re.search(r'<style>(.*?)</style>', BASE_HTML, re.DOTALL)
     css_content = css_match.group(1) if css_match else ""
     
+    # Add CSS for clickable game card links
+    css_content += """
+        /* ===== CLICKABLE GAME CARDS ===== */
+        .game-card-link {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+        .game-card-link:hover .game-card {
+            transform: translateY(-3px);
+            border-color: #3b82f6;
+        }
+        .game-card-link .game-card {
+            cursor: pointer;
+        }
+    """
+    
     # Build the full HTML
     html = f"""<!DOCTYPE html>
 <html lang="{cfg['html_lang']}">
@@ -836,9 +883,9 @@ def build_page(lang_key):
             <p>{cfg['h1_p4']}</p>
 
             <div class="cta-group">
-                <a href="#" class="cta-btn cta-primary">{cfg['cta1']}</a>
-                <a href="#" class="cta-btn cta-secondary">{cfg['cta2']}</a>
-                <a href="#" class="cta-btn cta-secondary">{cfg['cta3']}</a>
+                <a href="{go_href}" class="cta-btn cta-primary">{cfg['cta1']}</a>
+                <a href="{go_href}" class="cta-btn cta-secondary">{cfg['cta2']}</a>
+                <a href="{go_href}" class="cta-btn cta-secondary">{cfg['cta3']}</a>
             </div>
         </section>
 
@@ -855,13 +902,13 @@ def build_page(lang_key):
             <p>{cfg['h2_p4']}</p>
 
             <div class="cta-group">
-                <a href="#" class="cta-btn cta-primary">{cfg['h2_cta1']}</a>
-                <a href="#" class="cta-btn cta-secondary">{cfg['h2_cta2']}</a>
-                <a href="#" class="cta-btn cta-secondary">{cfg['h2_cta3']}</a>
-                <a href="#" class="cta-btn cta-secondary">{cfg['h2_cta4']}</a>
-                <a href="#" class="cta-btn cta-secondary">{cfg['h2_cta5']}</a>
-                <a href="#" class="cta-btn cta-secondary">{cfg['h2_cta6']}</a>
-                <a href="#" class="cta-btn cta-secondary">{cfg['h2_cta7']}</a>
+                <a href="{go_href}" class="cta-btn cta-primary">{cfg['h2_cta1']}</a>
+                <a href="{go_href}" class="cta-btn cta-secondary">{cfg['h2_cta2']}</a>
+                <a href="{go_href}" class="cta-btn cta-secondary">{cfg['h2_cta3']}</a>
+                <a href="{go_href}" class="cta-btn cta-secondary">{cfg['h2_cta4']}</a>
+                <a href="{go_href}" class="cta-btn cta-secondary">{cfg['h2_cta5']}</a>
+                <a href="{go_href}" class="cta-btn cta-secondary">{cfg['h2_cta6']}</a>
+                <a href="{go_href}" class="cta-btn cta-secondary">{cfg['h2_cta7']}</a>
             </div>
         </section>
 
@@ -893,12 +940,12 @@ def build_page(lang_key):
 
             <!-- Banner CTA -->
             <div class="banner-cta">
-                <div class="banner-cta-img"><img src="{banner_img}" alt="BetScore Casino Games Slots Live Tables" width="640" height="180" loading="lazy"></div>
+                <div class="banner-cta-img"><a href="{go_href}"><img src="{banner_img}" alt="{banner_alt}" width="640" height="180" loading="lazy"></a></div>
                 <div class="banner-cta-title">{cfg['banner_title']}</div>
                 <div class="banner-cta-text">{cfg['banner_text']}</div>
                 <div class="cta-group" style="justify-content: center;">
-                    <a href="#" class="cta-btn cta-primary">{cfg['banner_cta1']}</a>
-                    <a href="#" class="cta-btn cta-secondary">{cfg['banner_cta2']}</a>
+                    <a href="{go_href}" class="cta-btn cta-primary">{cfg['banner_cta1']}</a>
+                    <a href="{go_href}" class="cta-btn cta-secondary">{cfg['banner_cta2']}</a>
                 </div>
             </div>
 
