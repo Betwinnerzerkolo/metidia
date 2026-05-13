@@ -1,39 +1,1042 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Metidia - Casino Games & Slots Guide</title>
-    <meta name="description" content="Metidia - Your complete guide to Evolution Gaming, Hacksaw Gaming, and Nolimit City slots and live casino games on Roobet.">
+    <title>BetScore Casino Games - Slots, Live Casino, Table Games Online</title>
+    <meta name="description" content="BetScore Casino gives players direct access to slots, live casino tables, table games, instant games, crash titles, jackpot games, virtual sports, and sportsbook betting in one place.">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://metidia.com/">
     <link rel="sitemap" type="application/xml" href="sitemap.xml">
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #0d1117; color: #e6edf3; line-height: 1.6; }
-        header { background: linear-gradient(135deg, #1a1f35, #2d1b4e); padding: 40px 20px; text-align: center; }
-        header h1 { font-size: 2.5rem; margin-bottom: 10px; color: #fff; }
-        header p { font-size: 1.1rem; color: #8b949e; }
-        main { max-width: 960px; margin: 40px auto; padding: 0 20px; }
-        section { margin-bottom: 40px; }
-        section h2 { font-size: 1.6rem; color: #58a6ff; margin-bottom: 20px; border-bottom: 2px solid #21262d; padding-bottom: 10px; }
-        .links-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 16px; }
-        .link-card { background: #161b22; border: 1px solid #30363d; border-radius: 8px; padding: 20px; transition: transform 0.2s, border-color 0.2s; }
-        .link-card:hover { transform: translateY(-2px); border-color: #58a6ff; }
-        .link-card a { color: #58a6ff; text-decoration: none; font-size: 1.05rem; font-weight: 600; display: block; margin-bottom: 8px; }
-        .link-card a:hover { text-decoration: underline; }
-        .link-card p { color: #8b949e; font-size: 0.9rem; }
-        footer { text-align: center; padding: 30px; color: #484f58; border-top: 1px solid #21262d; margin-top: 40px; }
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #0b0e14;
+            color: #c9d1d9;
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* ===== HEADER ===== */
+        .site-header {
+            background: linear-gradient(160deg, #0f1923 0%, #1a1035 50%, #0f1923 100%);
+            border-bottom: 1px solid #1e2633;
+            padding: 32px 20px;
+            text-align: center;
+        }
+        .site-header .logo {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: #fff;
+            letter-spacing: 1px;
+        }
+        .site-header .tagline {
+            color: #7a8599;
+            font-size: 0.95rem;
+            margin-top: 6px;
+        }
+
+        /* ===== LAYOUT ===== */
+        .container {
+            max-width: 1120px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* ===== FEATURED GAMES SECTION ===== */
+        .featured-games {
+            padding: 48px 0 40px;
+        }
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 28px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #1e2633;
+        }
+        .games-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+        }
+        .game-card {
+            background: #131921;
+            border: 1px solid #1e2633;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+        .game-card:hover {
+            transform: translateY(-3px);
+            border-color: #3b82f6;
+        }
+        .game-card-img {
+            width: 100%;
+            aspect-ratio: 4 / 3;
+            background: #1a2230;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #3a4555;
+            font-size: 0.8rem;
+            border-bottom: 1px solid #1e2633;
+        }
+        .game-card-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        .game-card-body {
+            padding: 14px;
+        }
+        .game-card-name {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: #e6edf3;
+            margin-bottom: 4px;
+            line-height: 1.3;
+        }
+        .game-card-provider {
+            font-size: 0.8rem;
+            color: #6b7b8f;
+            margin-bottom: 8px;
+        }
+        .game-card-category {
+            display: inline-block;
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            padding: 3px 8px;
+            border-radius: 4px;
+            background: #1a2230;
+            color: #7aa2f7;
+            margin-bottom: 8px;
+        }
+        .game-card-category.live {
+            background: #1f1a2e;
+            color: #a78bfa;
+        }
+        .game-card-desc {
+            font-size: 0.78rem;
+            color: #7a8599;
+            line-height: 1.5;
+        }
+
+        /* ===== TEXT CONTENT SECTIONS ===== */
+        .text-section {
+            padding: 48px 0;
+        }
+        .text-section + .text-section {
+            padding-top: 0;
+        }
+        .text-section h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 24px;
+            line-height: 1.3;
+        }
+        .text-section h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 20px;
+            padding-top: 32px;
+            line-height: 1.3;
+        }
+        .text-section p {
+            margin-bottom: 18px;
+            color: #b0b8c4;
+            font-size: 0.95rem;
+            line-height: 1.8;
+        }
+        .text-section p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* ===== CTA BUTTONS ===== */
+        .cta-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 28px;
+        }
+        .cta-btn {
+            display: inline-block;
+            padding: 12px 28px;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: background 0.2s ease, transform 0.15s ease;
+            cursor: pointer;
+            border: none;
+            text-align: center;
+        }
+        .cta-btn:hover {
+            transform: translateY(-1px);
+        }
+        .cta-primary {
+            background: #3b82f6;
+            color: #fff;
+        }
+        .cta-primary:hover {
+            background: #2563eb;
+        }
+        .cta-secondary {
+            background: #1e2633;
+            color: #c9d1d9;
+            border: 1px solid #2d3848;
+        }
+        .cta-secondary:hover {
+            background: #263040;
+            border-color: #3b82f6;
+        }
+
+        /* ===== LINK SECTIONS (existing metidia links) ===== */
+        .links-section {
+            padding: 48px 0 20px;
+        }
+        .links-section .section-title {
+            font-size: 1.3rem;
+        }
+        .links-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 14px;
+        }
+        .link-card {
+            background: #131921;
+            border: 1px solid #1e2633;
+            border-radius: 8px;
+            padding: 18px;
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+        .link-card:hover {
+            transform: translateY(-2px);
+            border-color: #3b82f6;
+        }
+        .link-card a {
+            color: #7aa2f7;
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 600;
+            display: block;
+            margin-bottom: 6px;
+        }
+        .link-card a:hover {
+            text-decoration: underline;
+        }
+        .link-card p {
+            color: #6b7b8f;
+            font-size: 0.82rem;
+            line-height: 1.5;
+        }
+
+        /* ===== UX SECTION ===== */
+        .ux-section {
+            padding: 48px 0;
+        }
+        .ux-section .section-title {
+            margin-bottom: 32px;
+        }
+
+        /* Info Blocks */
+        .info-blocks {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+        .info-block {
+            background: #131921;
+            border: 1px solid #1e2633;
+            border-radius: 10px;
+            padding: 24px;
+            text-align: center;
+        }
+        .info-block-icon {
+            width: 56px;
+            height: 56px;
+            background: #1a2230;
+            border-radius: 12px;
+            margin: 0 auto 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #3a4555;
+            font-size: 0.7rem;
+        }
+        .info-block-title {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #e6edf3;
+            margin-bottom: 8px;
+        }
+        .info-block-text {
+            font-size: 0.82rem;
+            color: #7a8599;
+            line-height: 1.6;
+        }
+
+        /* Steps */
+        .steps-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+        .step-item {
+            background: #131921;
+            border: 1px solid #1e2633;
+            border-radius: 10px;
+            padding: 24px;
+            position: relative;
+        }
+        .step-number {
+            display: inline-block;
+            width: 32px;
+            height: 32px;
+            line-height: 32px;
+            text-align: center;
+            border-radius: 50%;
+            background: #1a2a40;
+            color: #7aa2f7;
+            font-weight: 700;
+            font-size: 0.85rem;
+            margin-bottom: 14px;
+        }
+        .step-title {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: #e6edf3;
+            margin-bottom: 6px;
+        }
+        .step-text {
+            font-size: 0.82rem;
+            color: #7a8599;
+            line-height: 1.6;
+        }
+
+        /* Provider Logos Row */
+        .providers-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+            justify-content: center;
+            margin-bottom: 40px;
+        }
+        .provider-badge {
+            background: #131921;
+            border: 1px solid #1e2633;
+            border-radius: 8px;
+            padding: 12px 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .provider-badge-logo {
+            width: 36px;
+            height: 36px;
+            background: #1a2230;
+            border-radius: 6px;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #3a4555;
+            font-size: 0.6rem;
+        }
+        .provider-badge-name {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #c9d1d9;
+            white-space: nowrap;
+        }
+
+        /* FAQ Accordion */
+        .faq-list {
+            margin-bottom: 40px;
+        }
+        .faq-item {
+            background: #131921;
+            border: 1px solid #1e2633;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            overflow: hidden;
+        }
+        .faq-question {
+            width: 100%;
+            background: none;
+            border: none;
+            padding: 18px 20px;
+            text-align: left;
+            font-size: 0.92rem;
+            font-weight: 600;
+            color: #e6edf3;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: inherit;
+        }
+        .faq-question:hover {
+            background: #161f2b;
+        }
+        .faq-arrow {
+            font-size: 0.75rem;
+            color: #6b7b8f;
+            transition: transform 0.2s ease;
+        }
+        .faq-item.open .faq-arrow {
+            transform: rotate(180deg);
+        }
+        .faq-answer {
+            display: none;
+            padding: 0 20px 18px;
+            font-size: 0.85rem;
+            color: #7a8599;
+            line-height: 1.7;
+        }
+        .faq-item.open .faq-answer {
+            display: block;
+        }
+
+        /* Stats Bar */
+        .stats-bar {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+            gap: 16px;
+            margin-bottom: 40px;
+        }
+        .stat-item {
+            background: #131921;
+            border: 1px solid #1e2633;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+        }
+        .stat-value {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 4px;
+        }
+        .stat-label {
+            font-size: 0.78rem;
+            color: #6b7b8f;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Banner CTA */
+        .banner-cta {
+            background: linear-gradient(135deg, #162033 0%, #1a1035 100%);
+            border: 1px solid #1e2633;
+            border-radius: 12px;
+            padding: 40px 32px;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .banner-cta-img {
+            width: 100%;
+            max-width: 640px;
+            height: 180px;
+            background: #1a2230;
+            border-radius: 8px;
+            margin: 0 auto 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #3a4555;
+            font-size: 0.8rem;
+        }
+        .banner-cta-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 10px;
+        }
+        .banner-cta-text {
+            font-size: 0.9rem;
+            color: #7a8599;
+            margin-bottom: 24px;
+            max-width: 560px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Payment Methods */
+        .payment-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            justify-content: center;
+            margin-bottom: 40px;
+        }
+        .payment-item {
+            width: 72px;
+            height: 44px;
+            background: #131921;
+            border: 1px solid #1e2633;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #3a4555;
+            font-size: 0.55rem;
+            text-align: center;
+        }
+
+        /* ===== FOOTER ===== */
+        .site-footer {
+            border-top: 1px solid #1e2633;
+            padding: 32px 20px;
+            text-align: center;
+            color: #484f58;
+            font-size: 0.82rem;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            .games-grid {
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+                gap: 12px;
+            }
+            .text-section h1 { font-size: 1.5rem; }
+            .text-section h2 { font-size: 1.25rem; }
+            .cta-group { flex-direction: column; }
+            .cta-btn { width: 100%; }
+            .info-blocks, .steps-row {
+                grid-template-columns: 1fr;
+            }
+            .stats-bar {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .banner-cta { padding: 28px 18px; }
+        }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Metidia</h1>
-        <p>Your Complete Guide to Casino Games &amp; Slots on Roobet</p>
+
+    <!-- HEADER -->
+    <header class="site-header">
+        <div class="logo">BetScore</div>
+        <p class="tagline">Casino Games, Slots, Live Tables and Sportsbook</p>
     </header>
-    <main>
-        <section>
-            <h2>Evolution Gaming - Live Casino</h2>
+
+    <div class="container">
+
+        <!-- ===== FEATURED GAMES GRID ===== -->
+        <section class="featured-games">
+            <h2 class="section-title">Featured BetScore Games and Providers</h2>
+            <div class="games-grid">
+
+                <div class="game-card">
+                    <div class="game-card-img"><!-- image placeholder --></div>
+                    <div class="game-card-body">
+                        <div class="game-card-name">Joker's Revenge</div>
+                        <div class="game-card-provider">Pragmatic Play</div>
+                        <span class="game-card-category">Slot</span>
+                        <div class="game-card-desc">Bonus rounds with expanding wilds and multiplier re-spins. Max win up to 5,000x your stake.</div>
+                    </div>
+                </div>
+
+                <div class="game-card">
+                    <div class="game-card-img"><!-- image placeholder --></div>
+                    <div class="game-card-body">
+                        <div class="game-card-name">Candy Rush</div>
+                        <div class="game-card-provider">Pragmatic Play</div>
+                        <span class="game-card-category">Slot</span>
+                        <div class="game-card-desc">Cluster pays with cascading symbols and free spins. Sweet multipliers build with each cascade.</div>
+                    </div>
+                </div>
+
+                <div class="game-card">
+                    <div class="game-card-img"><!-- image placeholder --></div>
+                    <div class="game-card-body">
+                        <div class="game-card-name">Skeleton Bombs</div>
+                        <div class="game-card-provider">Pragmatic Play</div>
+                        <span class="game-card-category">Slot</span>
+                        <div class="game-card-desc">Bomb feature removes low-value symbols and triggers chain reactions. High volatility payouts.</div>
+                    </div>
+                </div>
+
+                <div class="game-card">
+                    <div class="game-card-img"><!-- image placeholder --></div>
+                    <div class="game-card-body">
+                        <div class="game-card-name">Big Bass Football Bonanza</div>
+                        <div class="game-card-provider">Pragmatic Play</div>
+                        <span class="game-card-category">Slot</span>
+                        <div class="game-card-desc">Collect fisherman symbols for instant cash prizes. Football-themed bonus with Hold and Spin mechanic.</div>
+                    </div>
+                </div>
+
+                <div class="game-card">
+                    <div class="game-card-img"><!-- image placeholder --></div>
+                    <div class="game-card-body">
+                        <div class="game-card-name">Dragon's Gate Bonus Choice</div>
+                        <div class="game-card-provider">Pragmatic Play</div>
+                        <span class="game-card-category">Slot</span>
+                        <div class="game-card-desc">Choose your bonus round: free spins or cash wheel. Dragon wilds multiply wins during features.</div>
+                    </div>
+                </div>
+
+                <div class="game-card">
+                    <div class="game-card-img"><!-- image placeholder --></div>
+                    <div class="game-card-body">
+                        <div class="game-card-name">The Big Dog House</div>
+                        <div class="game-card-provider">Pragmatic Play</div>
+                        <span class="game-card-category">Slot</span>
+                        <div class="game-card-desc">Sticky wilds with multipliers stack during free spins. Raining wilds feature for bigger combinations.</div>
+                    </div>
+                </div>
+
+                <div class="game-card">
+                    <div class="game-card-img"><!-- image placeholder --></div>
+                    <div class="game-card-body">
+                        <div class="game-card-name">Triple Pot Plinko Hercules</div>
+                        <div class="game-card-provider">Pragmatic Play</div>
+                        <span class="game-card-category">Slot</span>
+                        <div class="game-card-desc">Plinko-style drop mechanic with three pot tiers. Land in gold pots for the highest multipliers.</div>
+                    </div>
+                </div>
+
+                <div class="game-card">
+                    <div class="game-card-img"><!-- image placeholder --></div>
+                    <div class="game-card-body">
+                        <div class="game-card-name">Great Ghosts</div>
+                        <div class="game-card-provider">Pragmatic Play</div>
+                        <span class="game-card-category">Slot</span>
+                        <div class="game-card-desc">Ghost wilds haunt the reels across multiple spins. Respins triggered with each ghost symbol landed.</div>
+                    </div>
+                </div>
+
+                <div class="game-card">
+                    <div class="game-card-img"><!-- image placeholder --></div>
+                    <div class="game-card-body">
+                        <div class="game-card-name">Dragon Pots Megaways</div>
+                        <div class="game-card-provider">Pragmatic Play</div>
+                        <span class="game-card-category">Slot</span>
+                        <div class="game-card-desc">Up to 117,649 ways to win with Megaways engine. Dragon pot jackpots available during any spin.</div>
+                    </div>
+                </div>
+
+                <div class="game-card">
+                    <div class="game-card-img"><!-- image placeholder --></div>
+                    <div class="game-card-body">
+                        <div class="game-card-name">The Blarney Stone</div>
+                        <div class="game-card-provider">Pragmatic Play</div>
+                        <span class="game-card-category">Slot</span>
+                        <div class="game-card-desc">Irish-themed bonus with lucky stone multipliers. Free spins with progressive multiplier ladder.</div>
+                    </div>
+                </div>
+
+                <div class="game-card">
+                    <div class="game-card-img"><!-- image placeholder --></div>
+                    <div class="game-card-body">
+                        <div class="game-card-name">Mr Null's Wicked Wares</div>
+                        <div class="game-card-provider">Pragmatic Play</div>
+                        <span class="game-card-category">Slot</span>
+                        <div class="game-card-desc">Mystery shop feature awards random bonus prizes. Pick items for instant wins or free spins entry.</div>
+                    </div>
+                </div>
+
+                <div class="game-card">
+                    <div class="game-card-img"><!-- image placeholder --></div>
+                    <div class="game-card-body">
+                        <div class="game-card-name">Code of Cairo</div>
+                        <div class="game-card-provider">Fat Panda and Pragmatic Play</div>
+                        <span class="game-card-category">Slot</span>
+                        <div class="game-card-desc">Egyptian adventure with code-breaking bonus mechanic. Unlock vault symbols for multiplied payouts.</div>
+                    </div>
+                </div>
+
+                <div class="game-card">
+                    <div class="game-card-img"><!-- image placeholder --></div>
+                    <div class="game-card-body">
+                        <div class="game-card-name">3 Cursed Chests</div>
+                        <div class="game-card-provider">Hacksaw Gaming</div>
+                        <span class="game-card-category">Slot</span>
+                        <div class="game-card-desc">Cursed chest collection triggers three-level bonus. Each chest tier increases potential multipliers.</div>
+                    </div>
+                </div>
+
+                <div class="game-card">
+                    <div class="game-card-img"><!-- image placeholder --></div>
+                    <div class="game-card-body">
+                        <div class="game-card-name">Sand and Ashes</div>
+                        <div class="game-card-provider">Hacksaw Gaming</div>
+                        <span class="game-card-category">Slot</span>
+                        <div class="game-card-desc">Desert-themed high volatility slot with persistent multipliers. Ashes transform into wilds on respin.</div>
+                    </div>
+                </div>
+
+                <div class="game-card">
+                    <div class="game-card-img"><!-- image placeholder --></div>
+                    <div class="game-card-body">
+                        <div class="game-card-name">Dynasty of Death</div>
+                        <div class="game-card-provider">Hacksaw Gaming</div>
+                        <span class="game-card-category">Slot</span>
+                        <div class="game-card-desc">Dark dynasty theme with stacking death symbols. Bonus buy available for direct feature access.</div>
+                    </div>
+                </div>
+
+                <div class="game-card">
+                    <div class="game-card-img"><!-- image placeholder --></div>
+                    <div class="game-card-body">
+                        <div class="game-card-name">Le Digger</div>
+                        <div class="game-card-provider">Hacksaw Gaming</div>
+                        <span class="game-card-category">Slot</span>
+                        <div class="game-card-desc">Dig through layers for hidden multipliers and prizes. Each depth level increases reward potential.</div>
+                    </div>
+                </div>
+
+                <div class="game-card">
+                    <div class="game-card-img"><!-- image placeholder --></div>
+                    <div class="game-card-body">
+                        <div class="game-card-name">Red Rascal</div>
+                        <div class="game-card-provider">Hacksaw Gaming</div>
+                        <span class="game-card-category">Slot</span>
+                        <div class="game-card-desc">Rascal wild symbols spread across reels during free spins. Expanding wild reel on bonus trigger.</div>
+                    </div>
+                </div>
+
+                <div class="game-card">
+                    <div class="game-card-img"><!-- image placeholder --></div>
+                    <div class="game-card-body">
+                        <div class="game-card-name">Punk Rocker 3</div>
+                        <div class="game-card-provider">Nolimit City</div>
+                        <span class="game-card-category">Slot</span>
+                        <div class="game-card-desc">Extreme volatility with xWays and xBet mechanics. Multiple free spin tiers with increasing multipliers.</div>
+                    </div>
+                </div>
+
+                <div class="game-card">
+                    <div class="game-card-img"><!-- image placeholder --></div>
+                    <div class="game-card-body">
+                        <div class="game-card-name">Fate of Dead Blitzways</div>
+                        <div class="game-card-provider">Play'n GO</div>
+                        <span class="game-card-category">Slot</span>
+                        <div class="game-card-desc">Blitzways mechanic with rapid symbol transformations. Dead or Alive themed bonus with sticky wilds.</div>
+                    </div>
+                </div>
+
+                <div class="game-card">
+                    <div class="game-card-img"><!-- image placeholder --></div>
+                    <div class="game-card-body">
+                        <div class="game-card-name">Gates of Power</div>
+                        <div class="game-card-provider">BGaming</div>
+                        <span class="game-card-category">Slot</span>
+                        <div class="game-card-desc">Power gates open for progressive free spin tiers. Multiplier symbols collect across bonus rounds.</div>
+                    </div>
+                </div>
+
+                <div class="game-card">
+                    <div class="game-card-img"><!-- image placeholder --></div>
+                    <div class="game-card-body">
+                        <div class="game-card-name">King's Mystery</div>
+                        <div class="game-card-provider">Playtech</div>
+                        <span class="game-card-category">Slot</span>
+                        <div class="game-card-desc">Mystery symbols reveal matching icons for bigger wins. Royal bonus round with multiplied paylines.</div>
+                    </div>
+                </div>
+
+                <div class="game-card">
+                    <div class="game-card-img"><!-- image placeholder --></div>
+                    <div class="game-card-body">
+                        <div class="game-card-name">Gravity Roulette</div>
+                        <div class="game-card-provider">Pragmatic Play Live</div>
+                        <span class="game-card-category live">Live Casino</span>
+                        <div class="game-card-desc">Live roulette with gravity multiplier drops. Random numbers receive boosted payouts each round.</div>
+                    </div>
+                </div>
+
+                <div class="game-card">
+                    <div class="game-card-img"><!-- image placeholder --></div>
+                    <div class="game-card-body">
+                        <div class="game-card-name">Gold Saloon Blackjack</div>
+                        <div class="game-card-provider">Pragmatic Play Live</div>
+                        <span class="game-card-category live">Live Casino</span>
+                        <div class="game-card-desc">Western-themed live blackjack with side bet options. Professional dealers with standard blackjack rules.</div>
+                    </div>
+                </div>
+
+                <div class="game-card">
+                    <div class="game-card-img"><!-- image placeholder --></div>
+                    <div class="game-card-body">
+                        <div class="game-card-name">Speed Baccarat</div>
+                        <div class="game-card-provider">Live Casino Provider</div>
+                        <span class="game-card-category live">Live Casino</span>
+                        <div class="game-card-desc">Fast-paced baccarat with shorter betting windows. Standard baccarat rules with accelerated rounds.</div>
+                    </div>
+                </div>
+
+                <div class="game-card">
+                    <div class="game-card-img"><!-- image placeholder --></div>
+                    <div class="game-card-body">
+                        <div class="game-card-name">Infinite Casino Hold'em</div>
+                        <div class="game-card-provider">Live Casino Provider</div>
+                        <span class="game-card-category live">Live Casino</span>
+                        <div class="game-card-desc">Unlimited seats at the poker table with live dealer. Ante and call bets with optional bonus side bet.</div>
+                    </div>
+                </div>
+
+                <div class="game-card">
+                    <div class="game-card-img"><!-- image placeholder --></div>
+                    <div class="game-card-body">
+                        <div class="game-card-name">Gravity Wheel</div>
+                        <div class="game-card-provider">Pragmatic Play Live</div>
+                        <span class="game-card-category live">Live Game Show</span>
+                        <div class="game-card-desc">Live game show with gravity-powered wheel spins. Multiplier segments and bonus rounds for larger wins.</div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ===== H1 + TEXT BLOCK ===== -->
+        <section class="text-section">
+            <h1>BetScore Casino Games</h1>
+
+            <p>BetScore Casino gives players direct access to a large online gambling lobby with slots, live casino tables, table games, instant games, crash titles, jackpot games, virtual sports, and sportsbook betting in one place. The lobby is designed for quick navigation: users can search by game name, filter by provider, or open popular categories such as online slots, live roulette, live blackjack, baccarat, poker-style games, crash games, dice games, and fast instant games. New players can create an account, choose an available payment method, and launch eligible real-money games from desktop or mobile browser.</p>
+
+            <p>Slots are the main game type at BetScore Casino. The catalogue includes classic reel slots, modern video slots, Megaways games, Bonus Buy releases, Hold and Win titles, jackpot slots, high volatility games, branded mechanics, and new launches from major casino studios. Players who prefer dealer-led gameplay can use the live casino section, where roulette, blackjack, baccarat, casino hold'em, live wheels, and game show formats are grouped by table type and provider. This makes it easier to find a preferred live room without searching through the full casino lobby.</p>
+
+            <p>BetScore also includes table games for users who want familiar rules and clearer betting structures. Blackjack, roulette, baccarat, poker-style titles, and dice games are suitable for shorter sessions and strategy-based play. For faster rounds, the instant and crash game sections focus on simple mechanics, quick outcomes, and easy entry. These games are useful for players who do not want long slot sessions or live dealer tables.</p>
+
+            <p>The same BetScore account can be used for casino games and sportsbook betting. Players can move between the games lobby, live betting markets, promotions, payments, and account settings without changing platforms. Bonus offers may include deposit matches, free spins, reload rewards, cashback, VIP benefits, and crypto promotions, depending on region, payment method, and account status. Before claiming any offer, players should check wagering requirements, minimum deposit, maximum bet, eligible games, expiry time, and game contribution rules. The main providers can include Pragmatic Play, Hacksaw Gaming, Nolimit City, Play'n GO, BGaming, Playtech, NetEnt, Red Tiger, Yggdrasil, Betsoft, Evolution, Stakelogic, and other studios.</p>
+
+            <div class="cta-group">
+                <a href="#" class="cta-btn cta-primary">Play BetScore Casino</a>
+                <a href="#" class="cta-btn cta-secondary">Open Games Lobby</a>
+                <a href="#" class="cta-btn cta-secondary">Create Account</a>
+            </div>
+        </section>
+
+        <!-- ===== H2 + TEXT BLOCK ===== -->
+        <section class="text-section">
+            <h2>Play BetScore Casino Games Online</h2>
+
+            <p>To play BetScore Casino games online, open the casino lobby and choose the section that matches your preferred format. Slots are the best starting point for players who want the widest choice of themes, features, jackpots, bonus rounds, and high-multiplier mechanics. Live casino is better for users who want real dealer tables, streamed game shows, and a more social casino feel. Table games are suitable for blackjack, roulette, baccarat, and poker-style sessions with familiar rules, while instant games and crash titles are built around speed, simple controls, and fast results. The sportsbook can also be opened from the same account for pre-match and live betting.</p>
+
+            <p>The basic process is simple. Open BetScore Casino, click Play Now or Games, select a category, then register or log in. After account access is ready, choose a supported payment method, make a deposit, open the selected game, and start playing. Existing users can go straight to the BetScore login page and enter their account details. New players may register with email, phone, or available social login options, depending on the market and account setup.</p>
+
+            <p>BetScore games are available through a mobile browser, so users do not need to install a separate app to access the lobby. The mobile version gives access to slots, live casino games, table games, instant games, payments, promotions, account settings, and sportsbook markets. The same login can be used on phone, tablet, laptop, or desktop, which helps players continue from different devices.</p>
+
+            <p>The game lobby includes providers such as Pragmatic Play, Hacksaw Gaming, Nolimit City, Play'n GO, BGaming, Playtech, NetEnt, Red Tiger, Yggdrasil, Betsoft, Evolution, Stakelogic, Spinomenal, Amusnet, GameArt, TaDa Gaming, Fazi, Relax Gaming, Big Time Gaming, Ezugi, Playson, Evoplay, and other studios. Many games may be available in demo mode, but real-money play usually requires registration, account verification when requested, and a funded balance. Players should always check the rules, paylines, volatility, table limits, bonus eligibility, and responsible gambling tools before starting.</p>
+
+            <div class="cta-group">
+                <a href="#" class="cta-btn cta-primary">Start Playing</a>
+                <a href="#" class="cta-btn cta-secondary">Play on Mobile</a>
+                <a href="#" class="cta-btn cta-secondary">View Casino Bonuses</a>
+                <a href="#" class="cta-btn cta-secondary">Browse Providers</a>
+                <a href="#" class="cta-btn cta-secondary">Log In</a>
+                <a href="#" class="cta-btn cta-secondary">Register Now</a>
+                <a href="#" class="cta-btn cta-secondary">Open Sportsbook</a>
+            </div>
+        </section>
+
+        <!-- ===== UX ELEMENTS ===== -->
+        <section class="ux-section">
+            <h2 class="section-title">Why BetScore Casino</h2>
+
+            <!-- Stats Bar -->
+            <div class="stats-bar">
+                <div class="stat-item">
+                    <div class="stat-value">5,000+</div>
+                    <div class="stat-label">Casino Games</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">80+</div>
+                    <div class="stat-label">Game Providers</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">24/7</div>
+                    <div class="stat-label">Live Casino</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">Instant</div>
+                    <div class="stat-label">Crypto Payouts</div>
+                </div>
+            </div>
+
+            <!-- Info Blocks with image placeholders -->
+            <div class="info-blocks">
+                <div class="info-block">
+                    <div class="info-block-icon"><!-- image placeholder --></div>
+                    <div class="info-block-title">Slots and Video Slots</div>
+                    <div class="info-block-text">Classic reels, Megaways, Bonus Buy, Hold and Win, jackpots, and high volatility games from top studios.</div>
+                </div>
+                <div class="info-block">
+                    <div class="info-block-icon"><!-- image placeholder --></div>
+                    <div class="info-block-title">Live Casino Tables</div>
+                    <div class="info-block-text">Roulette, blackjack, baccarat, casino hold'em, and live game shows streamed with real dealers.</div>
+                </div>
+                <div class="info-block">
+                    <div class="info-block-icon"><!-- image placeholder --></div>
+                    <div class="info-block-title">Instant and Crash Games</div>
+                    <div class="info-block-text">Quick rounds, simple controls, and fast results for players who want short sessions.</div>
+                </div>
+                <div class="info-block">
+                    <div class="info-block-icon"><!-- image placeholder --></div>
+                    <div class="info-block-title">Sportsbook Betting</div>
+                    <div class="info-block-text">Pre-match and live betting markets accessible from the same account as the casino lobby.</div>
+                </div>
+            </div>
+
+            <!-- How to Get Started - Steps -->
+            <h2 class="section-title">How to Get Started</h2>
+            <div class="steps-row">
+                <div class="step-item">
+                    <div class="step-number">1</div>
+                    <div class="step-title">Create Account</div>
+                    <div class="step-text">Register with email, phone, or social login. Complete verification if requested by the platform.</div>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">2</div>
+                    <div class="step-title">Make a Deposit</div>
+                    <div class="step-text">Choose from available payment methods including crypto, cards, e-wallets, and bank transfers.</div>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">3</div>
+                    <div class="step-title">Choose a Game</div>
+                    <div class="step-text">Browse by category, search by name, or filter by provider to find the game you want to play.</div>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">4</div>
+                    <div class="step-title">Start Playing</div>
+                    <div class="step-text">Open the game, set your bet, and play. Switch between casino, live tables, and sportsbook anytime.</div>
+                </div>
+            </div>
+
+            <!-- Game Providers -->
+            <h2 class="section-title">Game Providers</h2>
+            <div class="providers-row">
+                <div class="provider-badge">
+                    <div class="provider-badge-logo"><!-- image placeholder --></div>
+                    <div class="provider-badge-name">Pragmatic Play</div>
+                </div>
+                <div class="provider-badge">
+                    <div class="provider-badge-logo"><!-- image placeholder --></div>
+                    <div class="provider-badge-name">Hacksaw Gaming</div>
+                </div>
+                <div class="provider-badge">
+                    <div class="provider-badge-logo"><!-- image placeholder --></div>
+                    <div class="provider-badge-name">Nolimit City</div>
+                </div>
+                <div class="provider-badge">
+                    <div class="provider-badge-logo"><!-- image placeholder --></div>
+                    <div class="provider-badge-name">Play'n GO</div>
+                </div>
+                <div class="provider-badge">
+                    <div class="provider-badge-logo"><!-- image placeholder --></div>
+                    <div class="provider-badge-name">BGaming</div>
+                </div>
+                <div class="provider-badge">
+                    <div class="provider-badge-logo"><!-- image placeholder --></div>
+                    <div class="provider-badge-name">Playtech</div>
+                </div>
+                <div class="provider-badge">
+                    <div class="provider-badge-logo"><!-- image placeholder --></div>
+                    <div class="provider-badge-name">NetEnt</div>
+                </div>
+                <div class="provider-badge">
+                    <div class="provider-badge-logo"><!-- image placeholder --></div>
+                    <div class="provider-badge-name">Red Tiger</div>
+                </div>
+                <div class="provider-badge">
+                    <div class="provider-badge-logo"><!-- image placeholder --></div>
+                    <div class="provider-badge-name">Yggdrasil</div>
+                </div>
+                <div class="provider-badge">
+                    <div class="provider-badge-logo"><!-- image placeholder --></div>
+                    <div class="provider-badge-name">Evolution</div>
+                </div>
+                <div class="provider-badge">
+                    <div class="provider-badge-logo"><!-- image placeholder --></div>
+                    <div class="provider-badge-name">Betsoft</div>
+                </div>
+                <div class="provider-badge">
+                    <div class="provider-badge-logo"><!-- image placeholder --></div>
+                    <div class="provider-badge-name">Stakelogic</div>
+                </div>
+            </div>
+
+            <!-- Banner CTA -->
+            <div class="banner-cta">
+                <div class="banner-cta-img"><!-- banner image placeholder --></div>
+                <div class="banner-cta-title">Ready to Play BetScore Casino</div>
+                <div class="banner-cta-text">Access slots, live dealer tables, crash games, table games, and sportsbook markets from one account. Desktop and mobile browser supported.</div>
+                <div class="cta-group" style="justify-content: center;">
+                    <a href="#" class="cta-btn cta-primary">Play Now</a>
+                    <a href="#" class="cta-btn cta-secondary">View All Games</a>
+                </div>
+            </div>
+
+            <!-- Payment Methods -->
+            <h2 class="section-title">Payment Methods</h2>
+            <div class="payment-row">
+                <div class="payment-item"><!-- Visa --></div>
+                <div class="payment-item"><!-- Mastercard --></div>
+                <div class="payment-item"><!-- Bitcoin --></div>
+                <div class="payment-item"><!-- Ethereum --></div>
+                <div class="payment-item"><!-- USDT --></div>
+                <div class="payment-item"><!-- Litecoin --></div>
+                <div class="payment-item"><!-- Skrill --></div>
+                <div class="payment-item"><!-- Neteller --></div>
+                <div class="payment-item"><!-- Bank --></div>
+            </div>
+
+            <!-- FAQ Accordion -->
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button class="faq-question">
+                        What types of games are available at BetScore Casino?
+                        <span class="faq-arrow">&#9660;</span>
+                    </button>
+                    <div class="faq-answer">BetScore Casino offers slots, live casino tables, table games, instant games, crash titles, jackpot games, virtual sports, and sportsbook betting. The lobby includes games from providers such as Pragmatic Play, Hacksaw Gaming, Nolimit City, Play'n GO, BGaming, Playtech, NetEnt, Evolution, and other studios.</div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Can I play BetScore games on mobile?
+                        <span class="faq-arrow">&#9660;</span>
+                    </button>
+                    <div class="faq-answer">Yes. BetScore games are available through a mobile browser on phone and tablet. The mobile version gives access to slots, live casino, table games, instant games, payments, promotions, and sportsbook. No separate app is required.</div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        What payment methods does BetScore support?
+                        <span class="faq-arrow">&#9660;</span>
+                    </button>
+                    <div class="faq-answer">Payment options may include crypto currencies such as Bitcoin, Ethereum, USDT, and Litecoin, as well as credit cards, e-wallets, and bank transfers. Available methods depend on the region and account status.</div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        How do I claim a bonus at BetScore Casino?
+                        <span class="faq-arrow">&#9660;</span>
+                    </button>
+                    <div class="faq-answer">Bonus offers may include deposit matches, free spins, reload rewards, cashback, VIP benefits, and crypto promotions. Check wagering requirements, minimum deposit, maximum bet, eligible games, expiry time, and game contribution rules before claiming any offer.</div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Is there a live casino section?
+                        <span class="faq-arrow">&#9660;</span>
+                    </button>
+                    <div class="faq-answer">Yes. The live casino section includes roulette, blackjack, baccarat, casino hold'em, live wheels, and game show formats. Tables are streamed with real dealers and grouped by table type and provider for easy navigation.</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== EXISTING METIDIA LINK SECTIONS ===== -->
+        <section class="links-section">
+            <h2 class="section-title">Evolution Gaming - Live Casino</h2>
             <div class="links-grid">
                 <div class="link-card">
                     <a href="https://metidia.com/evolution-gaming-roobet/">Evolution Gaming Roobet</a>
@@ -70,8 +1073,8 @@
             </div>
         </section>
 
-        <section>
-            <h2>Hacksaw Gaming - Slots</h2>
+        <section class="links-section">
+            <h2 class="section-title">Hacksaw Gaming - Slots</h2>
             <div class="links-grid">
                 <div class="link-card">
                     <a href="https://metidia.com/hacksaw-gaming-volatilite-roobet/">Hacksaw Gaming Volatilite</a>
@@ -92,8 +1095,8 @@
             </div>
         </section>
 
-        <section>
-            <h2>Nolimit City - Slots</h2>
+        <section class="links-section">
+            <h2 class="section-title">Nolimit City - Slots</h2>
             <div class="links-grid">
                 <div class="link-card">
                     <a href="https://metidia.com/nolimit-city-volatilite-extreme-roobet/">Nolimit City Volatilite Extreme</a>
@@ -117,9 +1120,29 @@
                 </div>
             </div>
         </section>
-    </main>
-    <footer>
-        <p>&copy; 2025 Metidia. All rights reserved.</p>
+
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <p>2025 Metidia. All rights reserved.</p>
     </footer>
+
+    <!-- FAQ Toggle Script -->
+    <script>
+        document.querySelectorAll('.faq-question').forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                var item = this.parentElement;
+                var isOpen = item.classList.contains('open');
+                document.querySelectorAll('.faq-item').forEach(function(el) {
+                    el.classList.remove('open');
+                });
+                if (!isOpen) {
+                    item.classList.add('open');
+                }
+            });
+        });
+    </script>
+
 </body>
 </html>
